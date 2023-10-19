@@ -1,5 +1,3 @@
-Create Database Kiza;
-Use database;
 
 CREATE TABLE USERS(
     user_id INT AUTO_INCREMENT PRIMARY KEY,

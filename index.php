@@ -6,6 +6,7 @@
     <title>Accueil!</title>
 </head>
 <body>
+    <?php include 'header.php' ?>
     <h1>welcome to the start point!</h1>
 </body>
 </html>

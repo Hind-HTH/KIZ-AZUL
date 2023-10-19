@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NavBar</title>
+    <link rel="stylesheet" href="./Assets/contact.css">
+    <title>Contact</title>
 </head>
 <body>
-    
+    <?php include 'header.php' ?>
+    <h1>Welcome to Contact Page!</h1>
 </body>
 </html>
