@@ -23,6 +23,11 @@
                 </li>
                 <li><a href="contact.php">Contact</a></li>
                 <li><a href="infos.php">Infos Supp</a></li>
+
+                <div>
+                    <button class="inscription-login"><a href="inscription.php">M'inscrire</a></button>
+                    <button class="inscription-login"><a href="login.php">Connexion</a></button>
+                </div>
             </ul>
         </div>
         <img class="menu-hamburger" src="./Assets/images/hamburger-menu-icon.jpg" alt="menu hamburger">

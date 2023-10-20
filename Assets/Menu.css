@@ -18,12 +18,13 @@ header {
 
 .navbar{
     position: absolute;
-    padding: 50px;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.171);
 }
 
 .navbar a{
@@ -37,6 +38,7 @@ header {
 
 .navbar .nav-links ul{
     display: flex;
+    /* margin-right: 200px; */
 }
 
 .navbar .nav-links ul li{
@@ -56,7 +58,20 @@ header {
     right: 30px;
     width: 35px;
 }
- 
+
+
+
+.navbar .nav-links ul .inscription-login {
+    color: rgb(0, 0, 0);
+    border-radius: 3px;
+    padding: 2px 25px;
+    border: 2px solid #7ecdef85;
+    background-color: rgba(131, 222, 242, 0.158);
+}
+
+.navbar .nav-links ul .inscription-login:hover {
+    background-color: rgba(131, 222, 242, 0.489);
+}
 /* .drop-down{
     display: none;
 }
@@ -121,7 +136,8 @@ header {
     .nav-links ul{
         display: flex;
         flex-direction: column; 
-        align-items: center;
+        align-items:center;
+        /* margin-left: 200px; */
     }
 
     .navbar .nav-links ul li{
