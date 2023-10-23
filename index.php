@@ -13,5 +13,7 @@
         
     </header>
     <h1>welcome to the start point!</h1>
+
+    <?php include 'footer.php'?>
 </body>
 </html>
