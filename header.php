@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Assets/Menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>NavBar</title>
 </head>
 <body>
@@ -12,14 +13,15 @@
         <div class="nav-links">
             <ul>
                 <li ><a href="index.php">Home</a></li>
-                <li><a href="prestations.php">Prestations</a>
-                    <!-- <div class="drop-down">
-                        <ul>
-                        <li><a href="A.php">A</a></li>
-                        <li><a href="B.php">B</a></li>
-                        <li><a href="C.php">C</a></li>
+                <li class="pres"><a>Prestations <i class="fa fa-angle-double-down"></i></a>
+                
+                    <div>
+                        <ul class="drop-down">
+                            <li><a href="A.php">Garde-enfants</a></li>
+                            <li><a href="B.php">Ménage</a></li>
+                            <li><a href="C.php">Repassage</a></li>
                         </ul>
-                    </div>  -->
+                    </div>
                 </li>
                 <li><a href="contact.php">Contact</a></li>
                 <li><a href="infos.php">Infos Supp</a></li>

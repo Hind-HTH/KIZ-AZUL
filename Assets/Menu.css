@@ -61,7 +61,8 @@ header {
 
 
 
-.navbar .nav-links ul .inscription-login {
+.navbar .nav-links ul .inscription-login 
+{
     color: rgb(0, 0, 0);
     border-radius: 3px;
     padding: 2px 25px;
@@ -69,37 +70,47 @@ header {
     background-color: rgba(131, 222, 242, 0.158);
 }
 
-.navbar .nav-links ul .inscription-login:hover {
+.navbar .nav-links ul .inscription-login:hover 
+{
     background-color: rgba(131, 222, 242, 0.489);
 }
-/* .drop-down{
+/* Styles pour l'élément "Prestations" et son menu déroulant(dropdown) */
+.navbar ul li .drop-down 
+{
     display: none;
-}
-
-.navbar ul li:hover .drop-down{
-    display: block;
+    flex-direction: column;
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.151);
-    margin-top: 15px;
-    margin-left: -15px;
-
-}
-
-.navbar ul li:hover .drop-down ul{
-    display: block;
-    margin: 10px;
-}
-
-.navbar ul li:hover .drop-down ul li{
-    width: 150px;
+    background-color: #f5f1f133; /* Couleur de fond du menu déroulant */
     padding: 10px;
-    border-bottom: 1px dotted white;
-    background: transparent;
-    border-radius: 0;
-    text-align: left;
-}   */
+    border-radius: 5px;
+    
+} 
+.navbar ul li:hover .drop-down 
+{
+    display: block;
+}
 
-@media screen and (max-width:900px) {
+.navbar ul li .drop-down .drop 
+{
+    list-style: none;
+    padding: 10px;
+} 
+
+.navbar ul li .drop-down .drop li 
+{
+    margin: 10px 0; 
+}
+
+.navbar ul li .drop-down .drop li a 
+{
+    text-decoration: none;
+    color: #fff; 
+} 
+
+
+
+@media screen and (max-width:900px) 
+{
     .navbar{
         padding: 0; 
     }
@@ -144,8 +155,32 @@ header {
         margin: 25px 0;
         font-size: 1.2em;
     }
+    /*dropdown*/
+    .navbar ul li.pres{
+        position: relative;
+    }
+
+    .pres .drop-down li a{
+        white-space: nowrap;
+    }
+
+    .pres .drop-down li{
+        display: inline;
+        margin-right: 15px;
+    }
+
+    .navbar ul li .drop-down {
+        position: absolute;
+        top: 0px;
+        left: 100px; 
+        font-size: 12px;
+         
+    }
 
 }
+/* https://frontendresource.com/css-dropdown-menus/ */
+
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_responsive_navbar_dropdown */
 
 
 
