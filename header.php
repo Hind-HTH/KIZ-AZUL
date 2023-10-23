@@ -12,7 +12,7 @@
         <a href="#" class="logo">Logo</a>
         <div class="nav-links">
             <ul>
-                <li ><a href="index.php">Home</a></li>
+                <li ><a href="index.php">Home </a></li>
                 <li class="pres"><a>Prestations <i class="fa fa-angle-double-down"></i></a>
                 
                     <div>
@@ -34,9 +34,9 @@
         </div>
         <img class="menu-hamburger" src="./Assets/images/hamburger-menu-icon.jpg" alt="menu hamburger">
     </nav>
-    <header>
+    <!-- <header>
         
-    </header>
+    </header> -->
 </body>
 
 <script>
