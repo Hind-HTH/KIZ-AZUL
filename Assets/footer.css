@@ -21,7 +21,7 @@ section{
 .footer{
     display: flex;
     gap: 6.5rem;
-    background: #32363a;
+    background: #001835;
     padding: 0px;
     /* justify-content: center; Centre horizontalement : pour changer position des elements de fotter*/
     align-items: center;
@@ -50,6 +50,7 @@ section{
     font-size:15px ;
     font-weight: 400;
     transition: all.40s ease;
+    color: lightblue;
 }
 
 .footer-content li a:hover{
@@ -76,6 +77,30 @@ section{
     color: #fff;
     transform: translateY(-5px);
 }
+
+
+.location-link i.icon-position{
+    color: lightblue;
+    font-size: 24px;
+    margin-right: 5px;
+}
+
+  /* Styles pour le dernier div avec l'image */
+.footer-content:last-child 
+{
+    text-align: center; 
+    padding: 20px; 
+}
+
+.footer-content:last-child img 
+{
+    max-width: 100%;
+    height: auto; 
+    border: 1px solid #ccc;
+    border-radius: 8px; 
+    max-height: 100px; 
+}
+
 
 @media (max-width:900px){
     section{
