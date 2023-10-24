@@ -5,33 +5,29 @@
     list-style: none;
     font-family: 'Work Sans', sans-serif;
 }
-/* 
+ 
 body{
     height: 100vh;
     width: 100%; 
-    background-color: #121b25;
-} */
+    overflow-x: hidden;
+    /* background-color: #121b25; */
+} 
 
-section{
-    height:40vh;
-    width: 100vw;
-    padding: 90px 15% 80px;
-}
 
-.footer{
+
+section.footer{
     display: flex;
-    gap: 6.5rem;
     background: #001835;
-    padding: 0px;
     /* justify-content: center; Centre horizontalement : pour changer position des elements de fotter*/
     align-items: center;
+    justify-content: space-between;
+    padding: 30px 30px;
 }
 
-.footer-container {
+section.icons{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center; 
-    align-items: center; 
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -103,23 +99,13 @@ section{
 
 
 @media (max-width:900px){
-    section{
-        padding: 50px 5% 40px;
+    section.footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 80px;
     }
 }
 
-@media (max-width:900px){
-    .footer{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200, auto));
-        gap: 2rem;
-    }
-}
-
-@media (max-width:700px){
-    .footer{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150, auto));
-        gap: 2.5rem;
-    }
-}
