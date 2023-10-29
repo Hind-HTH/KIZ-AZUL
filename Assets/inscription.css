@@ -1,0 +1,167 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-image: url("./images/3.jpg"); 
+    font-family: 'Poppins';
+}
+
+header {
+    height:30vh;
+    width: 100%;
+    
+    background-size: cover;
+} 
+
+
+.message-box {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.success-message {
+    color: #0a0;
+}
+
+.error-message {
+    color: #a00;
+}
+
+
+
+
+/* Styles pour le cadre autour des champs du formulaire */
+.PrincipaleDiv {
+    background-color: rgba(255, 255, 255, 0.8); /* Fond transparent */
+    border: 1px solid #ccc; /* Bordure légère */
+    border-radius: 10px; /* Coins arrondis */
+    /* padding: 20px; */
+    max-width: 600px; /* Largeur maximale */
+    width: 100%;
+    /*margin: 30px auto 20px auto;  Centrage horizontal, marge en haut et en bas */
+    margin: 30px auto 100px auto; 
+}
+
+
+
+
+/* Styles pour la InscriptionTitle */
+.InscriptionTitle {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.InscriptionTitle h2 {
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+/* Styles pour Form elements */
+.Form-element {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Styles pour le formulaire InscriptionForm */
+.InscriptionForm {
+    display: flex;
+    flex-direction: column; /* Afficher les éléments en colonne */
+    align-items: center; /* Centrer horizontalement */
+}
+
+/* Styles pour les champs de formulaire */
+.form-control {
+    width: 100% !important; /* Largeur à 100% */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px; /* Espace entre les champs de saisie */
+}
+
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+
+/* Styles pour les boutons radio */
+.radioDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.radioDiv .Form-element {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Espace entre le texte et le bouton radio */
+}
+
+input[type="radio"] {
+    margin-right: 5px; /* Espace entre les boutons radio */
+}
+
+.radioDiv .Form-element input[type="radio"] {
+    margin-bottom: 5px; /* Ajustez la valeur selon votre préférence */
+}
+
+.Form-element.radio-label h3 {
+    padding-bottom: 10px; /* Ajustez la valeur selon votre préférence */
+}
+
+
+
+/* Styles pour le bouton Submit */
+button[type="submit"] {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 60px;
+    margin-bottom: 25px;
+}
+
+
+/* Styles responsives pour les boutons radio en dessous du texte en 900px */
+@media (max-width: 900px) {
+    .radioDiv {
+        flex-direction: column; /* Afficher les éléments en colonne */
+        align-items: flex-start; /* Aligner à gauche verticalement */
+    }
+
+    .radioDiv .Form-element {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: 0; /* Aucun espace entre le texte et le bouton radio */
+    }
+
+    input[type="radio"] {
+        margin-right: 5px; /* Espace entre les boutons radio (si nécessaire) */
+    }
+}
+
+/* Styles responsives pour le cadre à 900px */
+@media (max-width: 900px) {
+    .PrincipaleDiv {
+        padding: 10px;
+        max-width: 90%; /* Réduire la largeur pour les petits écrans */
+    }
+}
+
+
