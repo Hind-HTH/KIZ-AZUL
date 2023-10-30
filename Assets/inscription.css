@@ -38,7 +38,7 @@ header {
 
 /* Styles pour le cadre autour des champs du formulaire */
 .PrincipaleDiv {
-    background-color: rgba(255, 255, 255, 0.8); /* Fond transparent */
+    background-color: rgba(255, 255, 255, 0.58); /* Fond transparent */
     border: 1px solid #ccc; /* Bordure légère */
     border-radius: 10px; /* Coins arrondis */
     /* padding: 20px; */

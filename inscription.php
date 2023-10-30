@@ -11,16 +11,16 @@ $data = array(
     'MDP' => ''
 );
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// error_reporting(E_ALL);
 
 $usr = new User();
 
 
-if (isset($_GET['form']) && $_GET['form'] == "Ok") {
-    $color = "#093";
-    array_push($errors, "Merci " . $data['PRENOM'] . " " . $data['NOM'] . ", vos informations ont bien été validées.");
-}
+// if (isset($_GET['form']) && $_GET['form'] == "Ok") {
+//     $color = "#093";
+//     array_push($errors, "Merci " . $data['PRENOM'] . " " . $data['NOM'] . ", vos informations ont bien été validées.");
+// }
 
 
 $validation = 0; 
@@ -76,6 +76,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $data['PRENOM'] = $prenom;
     $data['EMAIL'] = $email;
     $data['MDP'] = $mot_de_passe;
+
+    header('Location:login.php');
 }
 ?>
 
@@ -148,7 +150,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="prenom"></label>
                 </div>
                 <div class="Form-element">
-                    <input type="email" placeholder="Email*" class="form-control"  name="email" aria-describedby="emailHelp" value="<?= isset($data['EMAIL']) ? $data['EMAIL'] : '' ?>" required>
+                    <input type="email" placeholder="Email*" class="form-control"  name="email" aria-describedby="emailHelp" value="<?= isset($data['EMAIL']) ? $data['EMAIL'] :'' ?>" required>
                     <label for="email"></label>
                 </div>
 
