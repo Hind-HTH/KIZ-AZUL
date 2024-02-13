@@ -2,6 +2,8 @@
 require_once './class/User.php';
 
 $user = new User();
+$message = ''; 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    
     $sex = $_POST['sex'];
@@ -11,14 +13,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mot_de_passe = $_POST['mot_de_passe'];
     $confirm_mot_de_passe = $_POST['confirm_mot_de_passe'];
 
-    if ($mot_de_passe !== $confirm_mot_de_passe) {
+    // Vérifier si les champs obligatoires sont vides
+    if (empty($sex) || empty($nom) || empty($prenom) || empty($email) || empty($mot_de_passe) || empty($confirm_mot_de_passe)) {
+        $error = "Tous les champs sont obligatoires.";
+    } elseif ($mot_de_passe !== $confirm_mot_de_passe) {
         $error = "Les mots de passe ne correspondent pas.";
     } else {
         if ($user->estDejaInscrit($email)) {
             $error = "Cet email est déjà utilisé. Veuillez choisir un autre email.";
         } else {
             $user->inscrireUtilisateur($sex, $nom, $prenom, $email, $mot_de_passe);
-            $message = "Inscription réussie!";
+            $message = "Inscription réussie! Vous pouvez maintenant vous connecter.";
           
             header("Location: inscription.php");
             exit();
@@ -77,12 +82,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <h3>Pouvez-vous choisir votre sex:</h3>
                     </div>
                     <div class="Form-element">
-                        <input type="radio" placeholder="Sex*" class="form-control" name="sex" value="mme" <?php if ($data['SEX'] == "mme") echo 'checked'; ?> >
+                        <input type="radio" placeholder="Sex*" class="form-control" name="sex" value="mme" >
                         <label for="mme">Mme</label>
                     </div>
 
                     <div class="Form-element">
-                        <input type="radio" placeholder="Sex*" class="form-control" name="sex" value="mr" <?php if ($data['SEX'] == "mr") echo 'checked'; ?>>
+                        <input type="radio" placeholder="Sex*" class="form-control" name="sex" value="mr" >
                         <label for="mr">Mr</label>
                     </div>
                 </div>
