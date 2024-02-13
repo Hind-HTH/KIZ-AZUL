@@ -9,19 +9,11 @@ $fct = new fonctions();
 
 class Model {
 
-
     protected $table;
-	protected $mysqli;
+    protected $pdo;
 
-
-	public function __construct(){
-		$this->mysqli = Database::getMysqli();
-	}
+    public function __construct(){
+        $this->pdo = Database::getPdo();
+    }
     
-	// public function findOneById($id){
-	// 	$id = intval($id);
-	// 	$sql = "SELECT * FROM `$this->table` WHERE `ID` = $id";
-	// 	$req = mysqli_query($this->mysqli, $sql);
-	// 	return mysqli_fetch_assoc($req);
-	// }
 }

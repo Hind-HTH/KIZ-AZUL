@@ -6,35 +6,42 @@ class User extends Model {
 
     protected $table = "USERS";
 
+    public function inscrireUtilisateur($sex, $nom, $prenom, $email, $mot_de_passe) {
+        $sql = "INSERT INTO USERS (SEX, NOM, PRENOM, EMAIL, MDP, registration_date) values (?, ?, ?, ?, ?, CURRENT_TIMESTAMP)";
 
+        // Préparation de la requête
+        $stmt = $this->pdo->prepare($sql);
 
-    // public function 
-    function inscrireUtilisateur($sex,$nom,$prenom,$email,$mot_de_passe) {
-        // $mot_de_passe_hash = password_hash($mot_de_passe, PASSWORD_DEFAULT);
-    
+        // Liaison des paramètres
+        $stmt->bindParam(1, $sex);
+        $stmt->bindParam(2, $nom);
+        $stmt->bindParam(3, $prenom);
+        $stmt->bindParam(4, $email);
+
+        // Hashage du mot de passe
+        $mot_de_passe_hash = password_hash($mot_de_passe, PASSWORD_DEFAULT);
+        $stmt->bindParam(5, $mot_de_passe_hash);
+
+        // Exécution de la requête
+        $stmt->execute();
+    }
+
+    public function estDejaInscrit($email) {
+        $query = "SELECT * FROM `users` WHERE `EMAIL` = ?";
         
-		$sex = mysqli_real_escape_string($this->mysqli, $sex);
-        $nom = mysqli_real_escape_string($this->mysqli, $nom);
-        $prenom = mysqli_real_escape_string($this->mysqli, $prenom);
-        $email = mysqli_real_escape_string($this->mysqli, $email);
-        $mot_de_passe = password_hash($mot_de_passe, PASSWORD_DEFAULT);
+        // Préparation de la requête
+        $stmt = $this->pdo->prepare($query);
 
+        // Liaison des paramètres
+        $stmt->bindParam(1, $email);
 
-        $sql = "INSERT INTO USERS (SEX, NOM, PRENOM, EMAIL, MDP, registration_date) values ('$sex', '$nom','$prenom','$email','$mot_de_passe',CURRENT_TIMESTAMP)";
+        // Exécution de la requête
+        $stmt->execute();
 
-        $req= mysqli_query($this->mysqli, $sql) or die('Erreur 500-A23, Merci de contacter l\'administrateur.');
+        // Récupération des résultats
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $result !== false;
     }
-
-
-    public function estDejaInscrit($email)
-    {
-        $email = $this->mysqli->real_escape_string($email);
-        $query = "SELECT * FROM `users` WHERE `EMAIL` = '$email'";
-        $result = $this->mysqli->query($query);
-
-        return $result->num_rows > 0;
-    }
-
-
-
 }
+?>

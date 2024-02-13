@@ -1,25 +1,22 @@
 <?php
 
-
 class Database {
-    public static function getMysqli() {
+    public static function getPdo() {
         $servername = "localhost";
         $username = "";
         $password = "";
         $database = "kiz-azul";
 
-        // Create a connection
-        $conn = mysqli_connect($servername, $username, $password, $database);
-
-        if (!$conn) {
-            die("Error: " . mysqli_connect_error());
+        try {
+            $pdo = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+            
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $pdo;
+        } catch(PDOException $e) {
+            
+            die("Error: " . $e->getMessage());
         }
-
-        return $conn; // Renvoie l'objet mysqli
     }
 }
-
-
-
 
 ?>
