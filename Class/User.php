@@ -43,5 +43,20 @@ class User extends Model {
 
         return $result !== false;
     }
+    public function verifierConnexion($email, $mot_de_passe) {
+        $sql = "SELECT * FROM users WHERE email = :email";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array(':email' => $email));
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+        if ($user && password_verify($mot_de_passe, $user['MDP'])) {
+            return true; // Connexion réussie
+        } else {
+            return false; // Identifiants incorrects
+        }
+    }
+    
+    
+    
 }
 ?>
