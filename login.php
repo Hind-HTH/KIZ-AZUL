@@ -1,5 +1,7 @@
 <?php
 require_once './class/User.php';
+require_once './Session.php';
+
 
 $user = new User();
 $message = ''; 
