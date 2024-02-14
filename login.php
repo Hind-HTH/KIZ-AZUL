@@ -13,7 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($user->verifierConnexion($email, $mot_de_passe)) {
        
         $message = "Connexion réussie!";
-       
+        $userInfo = $user->displayname($email); 
+        $_SESSION['nom'] = $userInfo['NOM']; 
+        $_SESSION['prenom'] = $userInfo['PRENOM'];
         header("Location: index.php");
         exit();
     } else {

@@ -25,6 +25,7 @@ class User extends Model {
         // Exécution de la requête
         $stmt->execute();
     }
+    
 
     public function estDejaInscrit($email) {
         $query = "SELECT * FROM `users` WHERE `EMAIL` = ?";
@@ -43,6 +44,8 @@ class User extends Model {
 
         return $result !== false;
     }
+
+
     public function verifierConnexion($email, $mot_de_passe) {
         $sql = "SELECT * FROM users WHERE email = :email";
         $stmt = $this->pdo->prepare($sql);
@@ -54,6 +57,14 @@ class User extends Model {
         } else {
             return false; // Identifiants incorrects
         }
+    }
+
+    public function displayname($email) {
+        $sql = "SELECT NOM, PRENOM FROM users WHERE email = :email";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array(':email' => $email));
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $user;
     }
     
     
