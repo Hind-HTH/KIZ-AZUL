@@ -29,7 +29,12 @@ require_once './Session.php';
                         </ul>
                     </div>
                 </li>
-                <li><a href="contact.php">Contact</a></li>
+                <!--debut contact--->
+                <?php if (!isset($_SESSION["nom"], $_SESSION["prenom"])) : ?>
+                <?php else : ?>
+                    <li><a href="contact.php">Contact</a></li>
+                <?php endif; ?>
+                <!--Fin contact--->
                 <li><a href="infos.php">Infos Supp</a></li>
 
                 <div>

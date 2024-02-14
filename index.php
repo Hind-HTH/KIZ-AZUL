@@ -14,9 +14,7 @@ require_once './Session.php';
     <?php include 'header.php' ?>
 
     <header>
-        <?php echo $_SESSION["nom"] . " " . $_SESSION["prenom"]; 
         
-        ?>
     </header>
     <h1>welcome to the start point! <br> Bonjour <?php echo $_SESSION["nom"] . " " . $_SESSION["prenom"]; ?></h1>
 
