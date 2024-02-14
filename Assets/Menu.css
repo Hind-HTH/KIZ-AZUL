@@ -60,6 +60,18 @@ header {
 }
 
 
+/* Style de l'icône profile */
+.inscription-login a i {
+    font-family: 'Font Awesome 5 Free'; 
+    font-size: 16px;
+}
+
+/* Style du nom d'utilisateur profile */
+.inscription-login a .user-name {
+    font-family: 'Poppins', sans-serif; 
+    font-size: 16px;
+}
+
 
 .navbar .nav-links ul .inscription-login 
 {

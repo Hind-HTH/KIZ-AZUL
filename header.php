@@ -35,12 +35,18 @@ require_once './Session.php';
                 <div>
                     <!-- <button class="inscription-login"><a href="inscription.php">M'inscrire</a></button>
                     <button class="inscription-login"><a href="login.php">Connexion</a></button> -->
-                    
+
                     <?php if (!isset($_SESSION["nom"], $_SESSION["prenom"])) : ?>
                         <button class="inscription-login"><a href="inscription.php">M'inscrire</a></button>
                         <button class="inscription-login"><a href="login.php">Connexion</a></button>
                     <?php else : ?>
-                        <button class="inscription-login"><a href="Profile.php">profile</a></button>
+                        <button class="inscription-login">
+                            <a href="Profile.php">
+                                <i class="fa-solid fa-user"></i>
+                                <span class="user-name"><?php echo $_SESSION["nom"] . " " . $_SESSION["prenom"]; ?></span>
+                            </a>
+                        </button>
+
                         <button class="inscription-login"><a href="logout.php">Déconnexion</a></button>
                     <?php endif; ?>
                 </div>
