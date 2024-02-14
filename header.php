@@ -1,7 +1,10 @@
-
+<?php
+require_once './Session.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +12,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>NavBar</title>
 </head>
+
 <body>
     <nav class="navbar">
         <a href="#" class="logo">Logo</a>
         <div class="nav-links">
             <ul>
-                <li ><a href="index.php">Home </a></li>
+                <li><a href="index.php">Home </a></li>
                 <li class="pres"><a>Prestations <i class="fa fa-angle-double-down"></i></a>
-                
+
                     <div>
                         <ul class="drop-down">
                             <li><a href="A.php">Garde-enfants</a></li>
@@ -29,8 +33,16 @@
                 <li><a href="infos.php">Infos Supp</a></li>
 
                 <div>
-                    <button class="inscription-login"><a href="inscription.php">M'inscrire</a></button>
-                    <button class="inscription-login"><a href="login.php">Connexion</a></button>
+                    <!-- <button class="inscription-login"><a href="inscription.php">M'inscrire</a></button>
+                    <button class="inscription-login"><a href="login.php">Connexion</a></button> -->
+                    
+                    <?php if (!isset($_SESSION["nom"], $_SESSION["prenom"])) : ?>
+                        <button class="inscription-login"><a href="inscription.php">M'inscrire</a></button>
+                        <button class="inscription-login"><a href="login.php">Connexion</a></button>
+                    <?php else : ?>
+                        <button class="inscription-login"><a href="Profile.php">profile</a></button>
+                        <button class="inscription-login"><a href="logout.php">Déconnexion</a></button>
+                    <?php endif; ?>
                 </div>
             </ul>
         </div>
@@ -44,10 +56,10 @@
 <script>
     const menuHamburger = document.querySelector(".menu-hamburger")
     const navLinks = document.querySelector(".nav-links")
- 
-    menuHamburger.addEventListener('click',()=>{
-    navLinks.classList.toggle('mobile-menu')
-        })
+
+    menuHamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-menu')
+    })
 </script>
 
 <script>
