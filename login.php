@@ -4,24 +4,25 @@ require_once './Session.php';
 
 
 $user = new User();
-$message = ''; 
+$message = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-   
+
     $email = $_POST['email'];
     $mot_de_passe = $_POST['mot_de_passe'];
 
-   
+
     if ($user->verifierConnexion($email, $mot_de_passe)) {
-       
         $message = "Connexion réussie!";
-        $userInfo = $user->displayname($email); 
-        $_SESSION['nom'] = $userInfo['NOM']; 
+        $userInfo = $user->displayname($email);
+        $_SESSION['nom'] = $userInfo['NOM'];
         $_SESSION['prenom'] = $userInfo['PRENOM'];
+        $_SESSION['email'] = $userInfo['EMAIL'];
+        $_SESSION['id_user'] = $userInfo['ID'];
         header("Location: index.php");
         exit();
     } else {
-        
+
         $error = "Identifiants incorrects. Veuillez réessayer.";
     }
 }
@@ -29,19 +30,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Assets/inscription.css">
-    
+
     <title>Connexion</title>
 </head>
+
 <body>
     <?php include 'header.php' ?>
-    
+
     <header>
 
-    
+
     </header>
     <section class="Principale">
         <div class="PrincipaleDiv">
@@ -68,12 +71,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <div class="Form-element">
-                    <input type="email" placeholder="Email*" class="form-control"  name="email" aria-describedby="emailHelp" value="<?= isset($data['EMAIL']) ? $data['EMAIL'] :'' ?>" >
+                    <input type="email" placeholder="Email*" class="form-control" name="email" aria-describedby="emailHelp" value="<?= isset($data['EMAIL']) ? $data['EMAIL'] : '' ?>">
                     <label for="email"></label>
                 </div>
 
                 <div>
-                    <input type="password" placeholder="Password*" class="form-control"  name="mot_de_passe" aria-describedby="passwordHelp" value="<?= isset($data['MDP']) ? $data['MDP'] : '' ?>" >
+                    <input type="password" placeholder="Password*" class="form-control" name="mot_de_passe" aria-describedby="passwordHelp" value="<?= isset($data['MDP']) ? $data['MDP'] : '' ?>">
                     <label for="mot_de_passe"></label>
                 </div>
 
@@ -83,4 +86,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </section>
     <?php include 'footer.php' ?>
 </body>
+
 </html>

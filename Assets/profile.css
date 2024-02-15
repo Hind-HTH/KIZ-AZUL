@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-image: url("./images/img.jpg"); 
+    font-family: 'Poppins';
+}
+
+header {
+    height:30vh;
+    width: 100%;
+    
+    background-size: cover;
+} 
+
+/* Styles pour le cadre autour des champs du formulaire */
+.PrincipaleDiv {
+    background-color: rgba(255, 255, 255, 0.58); 
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    max-width: 700px; 
+    width: 100%;
+    margin: 30px auto 100px auto; 
+}
+
+/* Styles pour la ProfileTitle */
+.ProfileTitle {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ProfileTitle h2 {
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+/* Styles pour le formulaire ProfileForm */
+.ProfileForm {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+/* Styles pour les champs de formulaire */
+.form-control {
+    width: 100% !important; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Styles pour les boutons radio */
+.radioDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+/* Styles pour le bouton Submit */
+button[type="submit"] {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 60px;
+    margin-bottom: 25px;
+}
+
+.profile-photo {
+    position: absolute;
+    top: auto;
+    left: auto;
+    width: 70px !important; /* Ajustez la taille selon vos besoins */
+    height: 70px !important; /* Ajustez la taille selon vos besoins */
+    border-radius: 50%; /* Pour un aspect arrondi */
+    border: 2px solid #fff; /* Bordure blanche autour de la photo */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Ombre autour de la photo */
+}
+
+
+/* Styles responsives pour le cadre à 900px */
+@media (max-width: 900px) {
+    .PrincipaleDiv {
+        padding: 10px;
+        max-width: 90%; 
+    }
+}
