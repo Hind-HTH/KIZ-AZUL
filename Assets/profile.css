@@ -85,7 +85,7 @@ button[type="submit"] {
 }
 
 .profile-photo {
-    position: absolute;
+    /* position: absolute; */
     margin-left: 20px !important;
     margin-top: 20px !important;
     /* top: auto;

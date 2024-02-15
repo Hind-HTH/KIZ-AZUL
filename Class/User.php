@@ -81,14 +81,15 @@ class User extends Model
         return $user;
     }
     
-    public function updateProfile($userId, $nom, $prenom, $tel, $adresse, $ville, $codePostale) {
+    public function updateProfile($userId, $nom, $prenom, $tel, $adresse, $ville, $codePostale,$photo_path) {
         $sql = "UPDATE profile 
         SET NOM = :nom, 
             PRENOM = :prenom, 
             TEL = :tel, 
             ADRESSE = :adresse, 
             VILLE = :ville, 
-            CODE_POSTALE = :codePostale 
+            CODE_POSTALE = :codePostale, 
+            PHOTO_PATH=:photo_path
         WHERE id_user = :id_user";
     
     
@@ -101,6 +102,7 @@ class User extends Model
         $stmt->bindParam(':adresse', $adresse);
         $stmt->bindParam(':ville', $ville);
         $stmt->bindParam(':codePostale', $codePostale);
+        $stmt->bindParam(':photo_path', $photo_path);
     
       
         $stmt->execute();
