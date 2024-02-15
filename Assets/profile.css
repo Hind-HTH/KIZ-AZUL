@@ -86,10 +86,12 @@ button[type="submit"] {
 
 .profile-photo {
     position: absolute;
-    top: auto;
-    left: auto;
-    width: 70px !important; /* Ajustez la taille selon vos besoins */
-    height: 70px !important; /* Ajustez la taille selon vos besoins */
+    margin-left: 20px !important;
+    margin-top: 20px !important;
+    /* top: auto;
+    left: auto; */
+    width: 100px !important; /* Ajustez la taille selon vos besoins */
+    height: 100px !important; /* Ajustez la taille selon vos besoins */
     border-radius: 50%; /* Pour un aspect arrondi */
     border: 2px solid #fff; /* Bordure blanche autour de la photo */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Ombre autour de la photo */
