@@ -6,12 +6,66 @@
 }
 
 body {
+    background-image: url("./images/R.jpeg"); 
     font-family: 'Poppins';
 }
 
 header {
-    height:90vh;
+    height:30vh;
     width: 100%;
-    background-image: url("./images/img.jpg");
     background-size: cover;
 } 
+
+/* Styles pour le cadre autour des champs du formulaire */
+.PrincipaleDiv {
+    background-color: rgba(255, 255, 255, 0.58); 
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    max-width: 700px; 
+    width: 100%;
+    margin: 30px auto 100px auto; 
+}
+/* Styles pour les champs de formulaire */
+.form-control {
+    width: 100% !important; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+/* Styles pour le formulaire ProfileForm */
+.ProfileForm {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.ProfileTitle {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ProfileTitle h2 {
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+.TitreContact {
+    text-align: center; /* Centre le texte horizontalement */
+    background-color: #f9c8c84c; /* Couleur de fond rose claire */
+    padding: 20px; /* Ajoute un peu d'espace autour du texte */
+}
+
+.TitreContact h1 {
+    margin: 0; /* Supprime les marges par défaut du titre */
+}
+
+
+/* Styles responsives pour le cadre à 900px */
+@media (max-width: 900px) {
+    .PrincipaleDiv {
+        padding: 10px;
+        max-width: 90%; 
+    }
+}
