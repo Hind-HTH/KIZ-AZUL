@@ -1,4 +1,3 @@
-
 <?php
 require './Session.php';
 require './phpmailer/Email.php';
@@ -12,8 +11,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $texte = $_POST['texte'];
 
         $email_utilisateur = isset($_SESSION['email']) ? $_SESSION['email'] : '';
-        
-        sendEmail($nom, $prenom, $tel,$email_utilisateur,$texte );
+
+        sendEmail($nom, $prenom, $tel, $email_utilisateur, $texte);
     }
 }
 ?>
@@ -43,32 +42,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="ProfileTitle">
                     <h2>Envoyez un mail <?php echo $_SESSION["nom"] . " " . $_SESSION["prenom"]; ?></h2>
                 </div>
+                <div class="FormInputStyle">
+                    <div class="ContactB1" >
+                        <div class="form-group">
+                            <input type="text" placeholder="Nom*" class="form-control" name="nom" value="<?= isset($data['NOM']) ? $data['NOM'] : '' ?>">
+                            <label for="nom"></label>
+                        </div>
 
-                <div>
-                    <input type="text" placeholder="Nom*" class="form-control" name="nom" value="<?= isset($data['NOM']) ? $data['NOM'] : '' ?>">
-                    <label for="nom"></label>
-                </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Prenom*" class="form-control" name="prenom" value="<?= isset($data['PRENOM']) ? $data['PRENOM'] : '' ?>">
+                            <label for="prenom"></label>
+                        </div>
+                    </div>
+                    <div class="ContactB1">
+                        <div class="form-group">
+                            <input type="text" placeholder="Numero Téléphone*" class="form-control" name="tel" value="<?= isset($data['TEL']) ? $data['TEL'] : '' ?>">
+                            <label for="tel"></label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Adresse Email*" class="form-control" name="email" value="<?= isset($data['Email']) ? $data['EMAIL'] : '' ?>">
+                            <label for="email"></label>
+                        </div>
+                    </div>
+                    <div class="ContactB1">
+                        <div class="form-group">
+                            <textarea placeholder="Votre Raison:*" class="form-control" name="texte" value="<?= isset($data['TEXTE']) ? $data['TEXTE'] : '' ?>"></textarea>
+                            <label for="texte"></label>
+                        </div>
+                    </div>
 
-                <div>
-                    <input type="text" placeholder="Prenom*" class="form-control" name="prenom" value="<?= isset($data['PRENOM']) ? $data['PRENOM'] : '' ?>">
-                    <label for="prenom"></label>
                 </div>
-
-
-                <div>
-                    <input type="text" placeholder="Numero Téléphone*" class="form-control" name="tel" value="<?= isset($data['TEL']) ? $data['TEL'] : '' ?>">
-                    <label for="tel"></label>
-                </div>
-                <div>
-                    <input type="text" placeholder="Adresse Email*" class="form-control" name="email" value="<?= isset($data['Email']) ? $data['EMAIL'] : '' ?>">
-                    <label for="email"></label>
-                </div>
-                <div>
-                    <textarea placeholder="Votre Raison:*" class="form-control" name="texte" value="<?= isset($data['TEXTE']) ? $data['TEXTE'] : '' ?>"></textarea>
-                    <label for="texte"></label>
-                </div>
-
-               
                 <button type="submit" name="validation">Connexion</button>
             </form>
         </div>

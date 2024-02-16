@@ -7,6 +7,7 @@
 
 body {
     font-family: 'Poppins';
+    background-color: rgba(76, 152, 199, 0.406);
 }
 
 header {
@@ -45,7 +46,7 @@ header {
 }
 
 .block {
-    border: 1px solid #ccc; 
+    border: 1px solid #000; 
     padding: 10px; 
 }
 
