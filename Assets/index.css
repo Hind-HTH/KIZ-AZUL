@@ -15,3 +15,49 @@ header {
     background-image: url("./images/img.jpg");
     background-size: cover;
 } 
+
+/*i start from here le css de la page */
+
+.Description {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    width: 70%; 
+    margin: 0 auto;
+}
+
+.Description h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px; 
+}
+
+.Description p {
+    font-size: 16px; 
+}
+
+.Accueil {
+    display: grid;
+    grid-template-columns: 50%  50%;
+    gap: 5px;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 70px;
+}
+.Photo img {
+    max-width: 100%; 
+    border-radius: 50%;
+}
+
+.TextAccueil {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 16px;
+}
+
+/* Responsive à 980px  AJOUTER LE RESPONSIVE*/
+@media screen and (max-width: 980px) {
+   
+}
+

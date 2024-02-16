@@ -46,6 +46,11 @@ if ($uploadOk == 0) {
     echo "Sorry, there was an error uploading your file.";
   }
 }
+
+
+
+
+//https://www.w3schools.com/php/php_file_upload.asp   i used this web site
 ?>
 
 
