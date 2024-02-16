@@ -52,13 +52,26 @@ header {
 }
 
 .TitreContact {
-    text-align: center; /* Centre le texte horizontalement */
-    background-color: #f9c8c84c; /* Couleur de fond rose claire */
-    padding: 20px; /* Ajoute un peu d'espace autour du texte */
+    text-align: center;
+    background-color: #f9c8c84c; 
+    padding: 20px; 
 }
 
 .TitreContact h1 {
-    margin: 0; /* Supprime les marges par défaut du titre */
+    margin: 0; 
+}
+button[type="submit"] {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 60px;
+    margin-bottom: 25px;
 }
 
 

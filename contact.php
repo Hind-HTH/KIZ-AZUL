@@ -1,4 +1,22 @@
 
+<?php
+require './Session.php';
+require './phpmailer/Email.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['tel']) && isset($_POST['email'])) {
+        $nom = $_POST['nom'];
+        $prenom = $_POST['prenom'];
+        $tel = $_POST['tel'];
+        $email = $_POST['email'];
+        $texte = $_POST['texte'];
+
+        $email_utilisateur = isset($_SESSION['email']) ? $_SESSION['email'] : '';
+        
+        sendEmail($nom, $prenom, $tel,$email_utilisateur,$texte );
+    }
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,11 +59,17 @@
                     <input type="text" placeholder="Numero Téléphone*" class="form-control" name="tel" value="<?= isset($data['TEL']) ? $data['TEL'] : '' ?>">
                     <label for="tel"></label>
                 </div>
-
                 <div>
                     <input type="text" placeholder="Adresse Email*" class="form-control" name="email" value="<?= isset($data['Email']) ? $data['EMAIL'] : '' ?>">
                     <label for="email"></label>
                 </div>
+                <div>
+                    <textarea placeholder="Votre Raison:*" class="form-control" name="texte" value="<?= isset($data['TEXTE']) ? $data['TEXTE'] : '' ?>"></textarea>
+                    <label for="texte"></label>
+                </div>
+
+               
+                <button type="submit" name="validation">Connexion</button>
             </form>
         </div>
     </section>

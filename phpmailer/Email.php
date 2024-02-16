@@ -8,7 +8,7 @@ use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
-
+function sendEmail($nom, $prenom, $tel, $email_utilisateur, $texte ) {
 $mail = new PHPMailer();
 
 $mail->isSMTP();
@@ -21,24 +21,25 @@ $mail->SMTPSecure = "tls";
 
 $mail->Port = "587";
 
-$mail->Username = "prestationsKiz@gmail.com";
+$mail->Username = "prestationsKiz@gmail.com"; // recois
 
 $mail->Password = "chap wqxx ooqb oaql";
 
-$mail->Subject = " Test Emailing Using PhpMailer";
+$mail->Subject = " Demande de contact depuis le formulaire";
 
-$mail->setFrom("prestationsKiz@gmail.com");
+$mail->setFrom($email_utilisateur); //envoie
 
-$mail->Body = "this is plan texte email";
+$mail->Body =  "Nom: $nom\nPrénom: $prenom\nTéléphone: $tel\nAdresse e-mail: $email_utilisateur\n\n Sujet:$texte "; //envoit le body de mail
 
-$mail->addAddress("prestationsKiz@gmail.com");
+$mail->addAddress('prestationsKiz@gmail.com'); //recoit
 
 
 
 if ($mail->send()) {
     echo "Email send ...!";
 } else {
-    echo "Error...!";
+    echo "Error...!" . $mail->ErrorInfo;
 }
 
 $mail->smtpClose();
+}
