@@ -85,6 +85,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="mot_de_passe"></label>
                 </div>
                 <button type="submit" name="validation">Enregistrer</button>
+
+                <div class="ResetPassword" style="margin-bottom: 10px;">
+                    <a href="./ResetPassword.php"> Changer votre mot de passe!</a>
+                </div>
             </form>
         </div>
     </section>
