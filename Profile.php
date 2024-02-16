@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
                 <div class="ProfileTitle">
-                    <h2>Votre Profile <?php echo $_SESSION["nom"] . " " . $_SESSION["prenom"]; ?></h2>
+                    <h2>Modifiez les informations de votre Profile <?php echo $_SESSION["nom"] . " " . $_SESSION["prenom"]; ?></h2>
                 </div>
 
                 <div>
